@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -48,6 +49,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    hilt {
+        enableAggregatingTask = false
     }
 }
 
