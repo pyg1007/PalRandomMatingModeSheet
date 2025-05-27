@@ -1,4 +1,4 @@
-package com.example.palwordrandommatingmodesheet
+package com.example.palwordrandommatingmodesheet.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
