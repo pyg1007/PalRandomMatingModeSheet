@@ -4,11 +4,16 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android.ksp)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.room)
 }
 
 android {
     namespace = "com.example.palwordrandommatingmodesheet"
     compileSdk = 36
+
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
 
     defaultConfig {
         applicationId = "com.example.palwordrandommatingmodesheet"
@@ -20,6 +25,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        tasks.register("createSchemaDir") {
+            doLast {
+                val schemaDir = File("$projectDir/schemas")
+                if (!schemaDir.exists()) {
+                    mkdir("$projectDir/schemas")
+                }
+            }
         }
     }
 
@@ -68,9 +82,12 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-
     testImplementation(libs.junit)
 
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+    testImplementation(libs.room.testing)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
