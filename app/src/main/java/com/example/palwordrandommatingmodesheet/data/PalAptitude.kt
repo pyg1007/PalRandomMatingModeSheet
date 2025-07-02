@@ -1,17 +1,23 @@
 package com.example.palwordrandommatingmodesheet.data
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "PalWorld")
 data class PalAptitude(
-    val number: Int,
-    val fire: Int,
-    val water: Int,
-    val sowing: Int,
-    val lightning: Int,
-    val handmade: Int,
-    val gathering: Int,
-    val felling: Int,
-    val mining: Int,
-    val pharmaceutical: Int,
-    val cooling: Int,
-    val conveyance: Int,
-    val pasture: Int
+    @PrimaryKey(autoGenerate = true) val number: Long,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "fire") val fire: Int,
+    @ColumnInfo(name = "water") val water: Int,
+    @ColumnInfo(name = "sowing") val sowing: Int,
+    @ColumnInfo(name = "lightning") val lightning: Int,
+    @ColumnInfo(name = "handmade") val handmade: Int,
+    @ColumnInfo(name = "gathering") val gathering: Int,
+    @ColumnInfo(name = "felling") val felling: Int,
+    @ColumnInfo(name = "mining") val mining: Int,
+    @ColumnInfo(name = "pharmaceutical") val pharmaceutical: Int,
+    @ColumnInfo(name = "cooling") val cooling: Int,
+    @ColumnInfo(name = "conveyance") val conveyance: Int,
+    @ColumnInfo(name = "pasture") val pasture: Int
 )
