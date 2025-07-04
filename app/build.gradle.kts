@@ -82,6 +82,8 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.gson)
+
     testImplementation(libs.junit)
 
     implementation(libs.room.runtime)
