@@ -1,8 +1,13 @@
 package com.example.palwordrandommatingmodesheet.repository
 
+import com.example.palwordrandommatingmodesheet.room.dao.PalInformationDao
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class PalInfoRepositoryImpl @Inject constructor() : PalInfoRepository{
+@Singleton
+class PalInfoRepositoryImpl @Inject constructor(
+    private val palInformationDao: PalInformationDao
+) : PalInfoRepository{
     override suspend fun load() {
 
     }
