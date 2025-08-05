@@ -91,6 +91,9 @@ dependencies {
     ksp(libs.room.compiler)
     testImplementation(libs.room.testing)
 
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

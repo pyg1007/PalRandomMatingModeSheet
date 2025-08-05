@@ -6,5 +6,7 @@ import javax.inject.Inject
 class PalInfoUseCase @Inject constructor(
     private val repository: PalInfoRepository
 ){
-    operator fun invoke(){}
+    suspend operator fun invoke(){
+        repository.load()
+    }
 }
